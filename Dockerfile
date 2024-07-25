@@ -3,7 +3,7 @@ ARG TIDYVERSE_TAG
 FROM rocker/tidyverse:${TIDYVERSE_TAG}
 
 # Clang seems to be more memory efficient than g++
-RUN apt-get update -y && apt-get install -y --no-install-recommends libglpk-dev clang-3.6 \
+RUN apt-get update -y && apt-get install -y --no-install-recommends libglpk-dev clang-3.6 ocl-icd-libopencl1 opencl-headers clinfo\
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
